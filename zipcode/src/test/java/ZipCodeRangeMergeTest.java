@@ -47,7 +47,7 @@ public class ZipCodeRangeMergeTest {
     }
 
     @Test
-    public void aRangeContainsAll() {
+    public void aRangeContainsAllRange() {
         int[][] input = new int[][]{{95234, 95235}, {95236, 95237}, {95232, 95250}};
         int[][] output = new ZipCodeRangeMerge().mergeRange(input);
         Assert.assertEquals("[[95232, 95250]]", Arrays.deepToString(output));
