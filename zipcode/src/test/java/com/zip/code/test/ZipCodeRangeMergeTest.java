@@ -1,3 +1,4 @@
+package com.zip.code.test;
 import com.zip.code.ZipCodeRangeMerge;
 import org.junit.Assert;
 import org.junit.Test;
