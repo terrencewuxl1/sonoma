@@ -8,11 +8,10 @@ import java.util.Arrays;
 
 public class ZipCodeRangeUtilTest {
 
-    @Test
+    @Test(expected = NullPointerException.class)
     public void inputNull() {
         int[][] input = null;
         int[][] output = new ZipCodeRangeUtil().findMinNumOfZipRanges(input);
-        Assert.assertNull(output);
     }
 
     @Test
@@ -32,8 +31,11 @@ public class ZipCodeRangeUtilTest {
     @Test
     public void oneRangeStartLargerThanEnd() {
         int[][] input = new int[][]{{95500, 95176}};
-        int[][] output = new ZipCodeRangeUtil().findMinNumOfZipRanges(input);
-        Assert.assertEquals("[[95500, 95500]]", Arrays.deepToString(output));
+        try{
+            int[][] output = new ZipCodeRangeUtil().findMinNumOfZipRanges(input);
+        }catch (RuntimeException e){
+            Assert.assertEquals("Zip range error as : the start larger than end.",e.getMessage());
+        }
     }
 
     @Test

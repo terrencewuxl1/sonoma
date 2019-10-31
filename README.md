@@ -35,8 +35,7 @@
 ### Assumption
 	
 	1.zip range format is [xxxxx,xxxxx], the first number of range not larger than the second,
-	  otherwise, should be processed as the range only contains the first zip code. example:
-	  [95001,94001] -> [95001,95001]
+	  otherwise, will throw a runtime exception.
 	2.project supply a main method for running in the command environment, each arg as a range,
 	  assumed the args no longer than the length command accept. 
 
