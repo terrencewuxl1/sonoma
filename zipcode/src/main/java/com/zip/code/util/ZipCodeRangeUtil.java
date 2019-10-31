@@ -15,7 +15,7 @@ public class ZipCodeRangeUtil {
      * the same restrictions as the input
      */
     public ZipRange[] findMinNumOfZipRanges(ZipRange[] zipRanges) {
-        //null/empty array return null/empty
+        //null/empty input return null/empty
         if (zipRanges == null || zipRanges.length == 0) return zipRanges;
 
         sortZipCodeRangeArray(zipRanges); //sort input zip range array
