@@ -37,7 +37,7 @@
 	1.zip range format is [xxxxx,xxxxx], the first number of range not larger than the second,
 	  otherwise, should be processed as the range only contains the first zip code. example:
 	  [95001,94001] -> [95001,95001]
-	2.project supply a main method for running in the command evirenment, each arg as a range,
+	2.project supply a main method for running in the command environment, each arg as a range,
 	  assumed the args no longer than the length command accept. 
 
 ## Tests
@@ -65,7 +65,7 @@
 	
 ### How to use
 
-	maven package to jar file, directory run in command envirement 
+	maven package to jar file, directory run in command environment 
 	using java -jar <jar name> <zip range> <zip range>...  command
 
 	configure maven dependency in maven project, new a ZipCodeRangeUtil object, call its function
