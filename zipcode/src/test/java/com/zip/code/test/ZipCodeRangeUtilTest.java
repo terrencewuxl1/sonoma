@@ -22,10 +22,17 @@ public class ZipCodeRangeUtilTest {
     }
 
     @Test
-    public void onlyOneRange() {
+    public void oneRange() {
         int[][] input = new int[][]{{95112, 95176}};
         int[][] output = new ZipCodeRangeUtil().findMinNumOfZipRanges(input);
         Assert.assertEquals("[[95112, 95176]]", Arrays.deepToString(output));
+    }
+
+    @Test
+    public void oneRangeStartLargerThanEnd() {
+        int[][] input = new int[][]{{95500, 95176}};
+        int[][] output = new ZipCodeRangeUtil().findMinNumOfZipRanges(input);
+        Assert.assertEquals("[[95500, 95500]]", Arrays.deepToString(output));
     }
 
     @Test

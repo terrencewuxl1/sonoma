@@ -31,10 +31,18 @@
 
 	supply the function that given the ZIP code ranges, return the minimum number of ZIP  
 	 code ranges still represent the same restrictions.
+
+### Assumption
 	
+	1.zip range format is [xxxxx,xxxxx], the first number of range not larger than the second,
+	  otherwise, should be processed as the range only contains the first zip code. example:
+	  [95001,94001] -> [95001,95001]
+	2.project supply a main method for running in the command evirenment, each arg as a range,
+	  assumed the args no longer than the length command accept. 
+
 ## Tests
 
-	includes 8 unit test cases specific cover difference ZIP code ranges input.
+	includes 15 unit test cases specific cover difference ZIP code ranges situation.
 	
 ## Installation
 	
@@ -42,9 +50,10 @@
 
 - Clone this repo to your local machine using `https://github.com/terrencewuxl1/sonoma.git`
 
-### Setup
+### Setup to project reference
 
-	use maven deploy command deploy this project to the internal repository, then configure dependency  
+	use maven deploy command deploy this project to the internal repository, or intall to local
+	repository then configure dependency  
 	
 	<dependency>  
 		<groupId>exercise</groupId>  
@@ -56,7 +65,11 @@
 	
 ### How to use
 
-	general new a ZipCodeRangeMerge object, call its function, see example in unit test cases.
+	maven package to jar file, directory run in command envirement 
+	using java -jar <jar name> <zip range> <zip range>...  command
+
+	configure maven dependency in maven project, new a ZipCodeRangeUtil object, call its function
+	, see example in unit test cases.
 	
 	
 

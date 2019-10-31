@@ -43,14 +43,14 @@ public class ZipCodeRangeUtil {
             //get the last(biggest) range in the result list
             lastRange = result.get(result.size() - 1);
         }
-        if (result.isEmpty() || lastRange.end < currentZipRange.start - 1) {
+        if (result.isEmpty() || lastRange.getEnd() < currentZipRange.getStart() - 1) {
             // Save the first zip range into result  OR
             // There is gap between last range in result and current zip range, save
             // current zip range to result.
             result.add(currentZipRange);
         } else {
             // Merge current zip range into last range in result.
-            lastRange.end = Math.max(lastRange.end, currentZipRange.end);
+            lastRange.setEnd(Math.max(lastRange.getEnd(), currentZipRange.getEnd()));
         }
     }
 
@@ -104,8 +104,8 @@ public class ZipCodeRangeUtil {
     private int[][] convertToIntArray(ZipRange[] zipRanges) {
         int[][] intArray = new int[zipRanges.length][2];
         for (int i = 0; i < intArray.length; i++) {
-            intArray[i][0] = zipRanges[i].start;
-            intArray[i][1] = zipRanges[i].end;
+            intArray[i][0] = zipRanges[i].getStart();
+            intArray[i][1] = zipRanges[i].getEnd();
         }
         return intArray;
     }
