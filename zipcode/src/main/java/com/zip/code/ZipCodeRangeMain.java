@@ -40,8 +40,7 @@ public class ZipCodeRangeMain {
                 zipIntArray[i][1]= parseInt(numbers[1]);
             }catch (NumberFormatException e){
                 //If the args format incorrect, print usage message.
-                System.out.println("Usage:java -jar <jar name> <zip range> <zip range>...");
-                System.out.println(" <zip range> format : [number,number]");
+                System.out.println("Zip range format error, <zip range> format : [number,number]");
                 return null;
             }
         }
