@@ -88,6 +88,7 @@ public class ZipCodeRangeUtil {
      * @return zipRange objects array same value as the input
      */
     private ZipRange[] convertToZipRangeArray(int[][] zipIntArray) {
+        if(zipIntArray==null)return null;
         ZipRange[] zipRanges = new ZipRange[zipIntArray.length];
         for (int i = 0; i < zipRanges.length; i++) {
             zipRanges[i] = new ZipRange(zipIntArray[i][0], zipIntArray[i][1]);
@@ -102,6 +103,7 @@ public class ZipCodeRangeUtil {
      * @return int[] array the same value as input
      */
     private int[][] convertToIntArray(ZipRange[] zipRanges) {
+        if(zipRanges==null)return null;
         int[][] intArray = new int[zipRanges.length][2];
         for (int i = 0; i < intArray.length; i++) {
             intArray[i][0] = zipRanges[i].getStart();

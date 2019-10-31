@@ -8,10 +8,11 @@ import java.util.Arrays;
 
 public class ZipCodeRangeUtilTest {
 
-    @Test(expected = NullPointerException.class)
+    @Test
     public void inputNull() {
         int[][] input = null;
         int[][] output = new ZipCodeRangeUtil().findMinNumOfZipRanges(input);
+        Assert.assertNull(output);
     }
 
     @Test
